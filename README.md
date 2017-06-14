@@ -59,13 +59,15 @@
 ```php
 Public function notify(){
     $params['gameId'] = 1;
-	$params['subGameId']=1;
+    $params['subGameId']=1;
     $params['accessToken'] = 'tokendemo';
     ksort($params);
-    $params['key'] = 'key';//由米壳颁发
-    $params['sign'] = md5(implode('', $params));
-    unset($params['key']);
-    $res = file_get_contents(http_build_query($url.$keys));
+    $key = 'key';//由米壳颁发
+    
+    $str = str_replace("&","",http_build_query($params).$key);
+    $params['sign'] = md5($str);
+    
+    $res = curl_https（$url,$params） ;//发起https请求
     //处理$res数据
 }
 ```
@@ -156,7 +158,7 @@ Public function notify(){
         </tr>
         <tr>
             <td>sign</td>
-            <td>所有参数key(不包括sign)按照A-Z字段升序拼接key之后md5加密</td>
+            <td>所有参数key(不包括sign)按照A-Z字段升序拼接key之后,md5加密</td>
             <td>string</td>
             <td>是</td>
             <td></td>
@@ -177,10 +179,13 @@ Public function notify(){
     $sign = $_POST['sign'];
 
     ksort($params);
-    $params['key'] = 'dfsklfjslfksl7834853jghyg' ;//使用支付key
-    if(md5(implode('', $params))==$sign){
+    $key = 'key';//由米壳颁发使用支付key
+    $sign = md5(urldecode(str_replace("&","",http_build_query($params).$key)));
+    if($sign==$_POST['sign']){
         echo 'success';
         //CP方数据处理
+    }else{
+    	echo 'failure';
     }
 }
 ```
