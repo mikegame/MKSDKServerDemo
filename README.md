@@ -92,6 +92,7 @@ Public function notify(){
 * 2）**调用方式：** HTTP Post
 * 3）**接口描述：**
 **“游戏客户端”**购买成功后，**“SDK 服务器”**通过该接口通知**”游戏服务器“**。支付成功一定会及时回调通知，支付失败可能不会及时通知（如支付超时等无法及时通知），如果需要知道订单状态，使用支付结果查询结构。
+支付通知有失败重试机制，正式环境通知时间间隔为15,15,30,180,1800,1800,1800,1800,3600 单位为秒
 使用支付key签名；
 * 4）**请求方：** SDK 服务器  
 * 5）**响应方：** 游戏服务器 
@@ -135,6 +136,13 @@ Public function notify(){
             <td>是</td>
             <td></td>
         </tr>
+	<tr>
+            <td>subGameId</td>
+            <td>子包Id</td>
+            <td>int</td>
+            <td>是</td>
+            <td></td>
+        </tr>
         <tr>
             <td>platform</td>
             <td>平台类型</td>
@@ -172,6 +180,7 @@ Public function notify(){
     $params['cpOrderId'] = $_POST['cpOrderId'];
     $params['XSOrderId'] =  $_POST['XSOrderNo'];
     $params['gameId'] =  $_POST['gameId'];
+    $params['subGameId'] =  $_POST['subGameId'];
     $params['serverId'] =  $_POST['serverId'];
     $params['amount'] =  $_POST['amount'];
     $params['orderStatus'] =  $_POST['orderStatus'];
