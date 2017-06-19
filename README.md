@@ -178,15 +178,10 @@ Public function notify(){
 CP方处理例子：
 ```php
 Public function notify(){
-    $params['cpOrderId'] = $_POST['cpOrderId'];
-    $params['XSOrderId'] =  $_POST['XSOrderNo'];
-    $params['gameId'] =  $_POST['gameId'];
-    $params['subGameId'] =  $_POST['subGameId'];
-    $params['serverId'] =  $_POST['serverId'];
-    $params['amount'] =  $_POST['amount'];
-    $params['orderStatus'] =  $_POST['orderStatus'];
-    $params['userId'] = $_POST['userId'];
-    $sign = $_POST['sign'];
+    $params = I('post.');
+    unset($params['sign']);
+    
+    $sign = $_POST['sign'];
 
     ksort($params);
     $key = 'key';//由米壳颁发使用支付key
