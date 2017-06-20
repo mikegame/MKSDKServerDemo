@@ -166,6 +166,20 @@ Public function notify(){
             <td>1：已支付，0：未支付</td>
         </tr>
 	<tr>
+            <td>endtime</td>
+            <td>订单完成时间</td>
+            <td>int</td>
+            <td>是</td>
+            <td>UNIX时间戳</td>
+        </tr>
+	<tr>
+            <td>randStr</td>
+            <td>随机字符串</td>
+            <td>int</td>
+            <td>是</td>
+            <td></td>
+        </tr>
+	<tr>
             <td>customInfo</td>
             <td>用户自定义数据</td>
             <td>String</td>
