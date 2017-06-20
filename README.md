@@ -175,16 +175,16 @@ Public function notify(){
 	<tr>
             <td>randStr</td>
             <td>随机字符串</td>
-            <td>int</td>
+            <td>String</td>
             <td>是</td>
-            <td></td>
+            <td>不长于32位</td>
         </tr>
 	<tr>
             <td>customInfo</td>
             <td>用户自定义数据</td>
             <td>String</td>
             <td>是</td>
-            <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>sign</td>
