@@ -188,7 +188,7 @@ Public function notify(){
         </tr>
         <tr>
             <td>sign</td>
-            <td>所有参数key(不包括sign)按照A-Z字段升序拼接key之后,md5加密</td>
+            <td>所有参数key(不包括sign)按照A-Z字段升序直接拼接key之后,md5加密</td>
             <td>string</td>
             <td>是</td>
             <td></td>
@@ -197,6 +197,38 @@ Public function notify(){
 </table>
 	
 CP方处理例子：
+//拼接示例
+post内容
+array(9) {
+  ["platform"]=>
+  string(1) "1"
+  ["orderStatus"]=>
+  string(1) "1"
+  ["gameId"]=>
+  string(1) "1"
+  ["subGameId"]=>
+  string(1) "1"
+  ["totalFee"]=>
+  string(3) "100"
+  ["userId"]=>
+  string(3) "192"
+  ["cpOrderId"]=>
+  string(16) "2017061918305979"
+  ["orderId"]=>
+  string(27) "201706191831001661830628101"
+  ["sign"]=>
+  string(32) "413982a71628d73c5eb9b613ee13495b"
+}
+key：060c26955b6a8e04ea58253dcda931ed
+拼接：
+"cpOrderId=2017061918305979gameId=1orderId=2017061918310016618306281
+01orderStatus=1platform=1sign=413982a71628d73c5eb9b613ee13495bsubGameId=1totalFe
+e=100userId=192060c26955b6a8e04ea58253dcda931ed"
+
+
+sign：
+ "0554a2df922c7ae7b3a111d8c8f6ebfc"
+
 ```php
 Public function notify(){
     $params = I('post.');
@@ -208,7 +240,13 @@ Public function notify(){
     $key = 'key';//由米壳颁发使用支付key
     $sign = md5(urldecode(str_replace("&","",http_build_query($params).$key)));
     if($sign==$_POST['sign']){
-        echo 'success';
+    	//商户信息，订单信息验证
+	$success = ...;
+	if($success){
+        	echo 'success';
+	}else{
+		echo 'failure';
+	}
         //CP方数据处理
     }else{
     	echo 'failure';
