@@ -165,6 +165,13 @@ Public function notify(){
             <td>是</td>
             <td>1：已支付，0：未支付</td>
         </tr>
+	<tr>
+            <td>customInfo</td>
+            <td>用户自定义数据</td>
+            <td>String</td>
+            <td>是</td>
+            <td></td>
+        </tr>
         <tr>
             <td>sign</td>
             <td>所有参数key(不包括sign)按照A-Z字段升序拼接key之后,md5加密</td>
