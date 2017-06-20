@@ -219,15 +219,15 @@ array(9) {
   ["sign"]=>
   string(32) "413982a71628d73c5eb9b613ee13495b"
 }
-key：060c26955b6a8e04ea58253dcda931ed
-拼接：
+<br>
+key：060c26955b6a8e04ea58253dcda931ed<br>
+拼接：<br>
 "cpOrderId=2017061918305979gameId=1orderId=2017061918310016618306281
 01orderStatus=1platform=1sign=413982a71628d73c5eb9b613ee13495bsubGameId=1totalFe
-e=100userId=192060c26955b6a8e04ea58253dcda931ed"
+e=100userId=192060c26955b6a8e04ea58253dcda931ed"<br>
 
-
-sign：
- "0554a2df922c7ae7b3a111d8c8f6ebfc"
+sign：<br>
+ "0554a2df922c7ae7b3a111d8c8f6ebfc"<br>
 
 ```php
 Public function notify(){
