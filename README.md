@@ -67,7 +67,7 @@ Public function notify(){
     $str = str_replace("&","",http_build_query($params).$key);
     $params['sign'] = md5($str);
     
-    $res = curl_https（$url,$params） ;//发起https请求
+    $res = curl_https_post（$url,$params） ;//发起https post请求，不解析get请求
     //处理$res数据
 }
 ```
