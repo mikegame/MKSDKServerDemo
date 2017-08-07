@@ -149,7 +149,7 @@ Public function notify(){
             <td>平台类型</td>
             <td>string</td>
             <td>是</td>
-            <td>1，ios；2，android</td>
+            <td>1，iOS；2，android</td>
         </tr>
         <tr>
             <td>totalFee</td>
@@ -279,5 +279,5 @@ Public function notify(){
 
 许可证
 ==============
-HGSDK 使用 MIT 许可证，详情见 LICENSE 文件。
+MKSDK 使用 MIT 许可证，详情见 LICENSE 文件。
 
