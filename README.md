@@ -56,7 +56,7 @@
 </table>
 
 请求例子：   
-```php
+php
 Public function notify(){
     $params['gameId'] = 1;//米壳运营提供
     $params['subGameId']=1;//米壳运营提供
@@ -69,7 +69,7 @@ Public function notify(){
     $res = curl_https_post（$url,$params） ;//发起https post请求，不解析get请求
     //处理$res数据
 }
-```
+
 返回json
 {
     "code": 0,
@@ -77,9 +77,8 @@ Public function notify(){
     "data": {
         "userId": 8,
         "userName": "zxwzxw"
-    }
+    }
 }
-```
 
 
 
