@@ -26,14 +26,14 @@
     <tbody>
         <tr>
             <td>gameId</td>
-            <td>米壳后台申请(游戏Id)</td>
+            <td>米壳运营提供(游戏Id)</td>
             <td>string</td>
             <td>是</td>
             <td></td>
         </tr>
 		<tr>
             <td>subGameId</td>
-            <td>米壳后台申请(游戏子包Id)</td>
+            <td>米壳运营提供(游戏子包Id)</td>
             <td>string</td>
             <td>是</td>
             <td></td>
@@ -50,7 +50,7 @@
             <td>签名参数</td>
             <td>string</td>
             <td>是</td>
-            <td>所有参数key(不包括sign)按照A-Z字段升序拼接key之后md5加密</td>
+            <td>所有参数(不包括sign)按照A-Z字段升序拼接key之后md5运算</td>
         </tr>
     </tbody>
 </table>
@@ -58,12 +58,11 @@
 请求例子：   
 ```php
 Public function notify(){
-    $params['gameId'] = 1;
-    $params['subGameId']=1;
+    $params['gameId'] = 1;//米壳运营提供
+    $params['subGameId']=1;//米壳运营提供
     $params['accessToken'] = 'tokendemo';
     ksort($params);
-    $key = 'key';//由米壳颁发
-    
+    $key = 'api_key';//米壳运营提供
     $str = str_replace("&","",http_build_query($params).$key);
     $params['sign'] = md5($str);
     
