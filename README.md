@@ -63,7 +63,7 @@ Public function notify(){
     $params['accessToken'] = 'tokendemo';
     ksort($params);
     $key = 'api_key';//米壳运营提供
-    $str = str_replace("&","",http_build_query($params).$key);//去除&，升序拼接成：accessToken=accessakkgameId=1key=api_keysubGameId=1
+    $str = str_replace("&","",http_build_query($params).$key);//去除&，升序拼接成：accessToken=accessakkgameId=1subGameId=1api_key
     $params['sign'] = md5($str);
     
     $res = curl_https_post（$url,$params） ;//发起https post请求，不解析get请求
