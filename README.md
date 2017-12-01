@@ -56,7 +56,7 @@
 </table>
 
 请求例子：   
-php
+```php
 Public function notify(){
     $params['gameId'] = 1;//米壳运营提供
     $params['subGameId']=1;//米壳运营提供
@@ -80,7 +80,7 @@ Public function notify(){
         "userName": "zxwzxw"
     }
 }
-
+```
 
 
 ###	2、支付结果异步通知
@@ -191,7 +191,7 @@ Public function notify(){
         </tr>
     </tbody>
 </table>
-	
+```php
 CP方处理例子：
 //拼接示例
 post内容
@@ -225,7 +225,7 @@ e=100userId=192060c26955b6a8e04ea58253dcda931ed"<br>
 sign：<br>
  "0554a2df922c7ae7b3a111d8c8f6ebfc"<br>
 
-```php
+
 Public function notify(){
     $params = I('post.');
     unset($params['sign']);
