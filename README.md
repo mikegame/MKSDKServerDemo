@@ -223,7 +223,7 @@ array(9) {
 key：060c26955b6a8e04ea58253dcda931ed<br>
 拼接：<br>
 "cpOrderId=2017061918305979gameId=1orderId=2017061918310016618306281
-01orderStatus=1platform=1sign=413982a71628d73c5eb9b613ee13495bsubGameId=1totalFe
+01orderStatus=1platform=1subGameId=1totalFe
 e=100userId=192060c26955b6a8e04ea58253dcda931ed"<br>
 
 sign：<br>
