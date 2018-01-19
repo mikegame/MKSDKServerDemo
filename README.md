@@ -16,6 +16,7 @@
 		3001   签名错误 
 		3002   token失效
 		5000   服务端内部数据错误
+* 8）**KEY：运营提供的apiKey
 
 <table>
     <thead>
@@ -54,13 +55,24 @@
             <td>签名参数</td>
             <td>string</td>
             <td>是</td>
-            <td>所有参数(不包括sign)按照A-Z字段升序拼接key之后md5运算</td>
+            <td>所有参数(不包括sign)按照A-Z字段升序（去除&符号，key与value用=连接）拼接key之后md5运算</td>
         </tr>
     </tbody>
 </table>
 
 请求例子：   
 ```php
+
+key：060c26955b6a8e04ea58253dcda931ed<br>
+拼接示例：<br>
+"cpOrderId=2017061918305979gameId=1orderId=2017061918310016618306281
+01orderStatus=1platform=1subGameId=1totalFe
+e=100userId=192060c26955b6a8e04ea58253dcda931ed"<br>
+
+sign：<br>
+ "0554a2df922c7ae7b3a111d8c8f6ebfc"<br>
+ 
+ 
 Public function notify(){
     $params['gameId'] = 1;//米壳运营提供
     $params['subGameId']=1;//米壳运营提供
@@ -98,6 +110,7 @@ Public function notify(){
 * 4）**请求方：** SDK 服务器  
 * 5）**响应方：** 游戏服务器 
 * 6）**请求内容：** application/x-www-urlencoded格式
+* 7）**KEY：运营提供的payKey
 <table>
     <thead>
         <tr>
@@ -188,7 +201,7 @@ Public function notify(){
         </tr>
         <tr>
             <td>sign</td>
-            <td>所有参数key(不包括sign)按照A-Z字段升序直接拼接key之后,md5加密</td>
+            <td>所有参数key(不包括sign)按照A-Z字段升序（去除&符号，key与value用=连接）直接拼接key之后,md5运算</td>
             <td>string</td>
             <td>是</td>
             <td></td>
@@ -221,7 +234,7 @@ array(9) {
 }
 <br>
 key：060c26955b6a8e04ea58253dcda931ed<br>
-拼接：<br>
+拼接示例：<br>
 "cpOrderId=2017061918305979gameId=1orderId=2017061918310016618306281
 01orderStatus=1platform=1subGameId=1totalFe
 e=100userId=192060c26955b6a8e04ea58253dcda931ed"<br>
