@@ -111,6 +111,7 @@ Public function notify(){
 * 5）**响应方：** 游戏服务器 
 * 6）**请求内容：** application/x-www-urlencoded格式
 * 7）**KEY：运营提供的payKey
+* 8）**注意：请验证发起调用的服务器ip地址，ip地址会在参数里给到
 <table>
     <thead>
         <tr>
