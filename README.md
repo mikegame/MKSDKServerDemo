@@ -220,13 +220,6 @@ Public function notify(){
             <td>String</td>
             <td>是</td>
             <td></td>
-        </tr>    
-	<tr>
-            <td>gold</td>
-            <td>元宝数</td>
-            <td>int</td>
-            <td>是</td>
-            <td></td>
         </tr>
 	 <tr>
             <td>gold</td>
