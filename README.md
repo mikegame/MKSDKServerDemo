@@ -238,7 +238,7 @@ Public function notify(){
 	 <tr>
             <td>present</td>
             <td>返利比例</td>
-            <td>int</td>
+            <td>float（两位小数）</td>
             <td>是</td>
             <td></td>
         </tr>
@@ -249,7 +249,6 @@ Public function notify(){
             <td>是</td>
             <td></td>
         </tr>
-	    
         <tr>
             <td>sign</td>
             <td>所有参数key(不包括sign)按照A-Z字段升序（去除&符号，key与value用=连接）直接拼接key之后,md5运算</td>
