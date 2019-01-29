@@ -198,50 +198,9 @@ Public function notify(){
             <td>用户自定义数据</td>
             <td>String</td>
             <td>是</td>
-            <td>网页支付为空</td>
-        </tr>
-	<tr>
-            <td>ptId</td>
-            <td>平台ID</td>
-            <td>String</td>
-            <td>是</td>
             <td></td>
         </tr>
-	<tr>
-            <td>serverId</td>
-            <td>区服ID</td>
-            <td>String</td>
-            <td>是</td>
-            <td></td>
-        </tr>
-	 <tr>
-            <td>roleId</td>
-            <td>角色ID</td>
-            <td>String</td>
-            <td>是</td>
-            <td></td>
-        </tr>
-	 <tr>
-            <td>gold</td>
-            <td>元宝数</td>
-            <td>int</td>
-            <td>是</td>
-            <td></td>
-        </tr>
-	 <tr>
-            <td>present</td>
-            <td>返利比例</td>
-            <td>float（两位小数）</td>
-            <td>是</td>
-            <td></td>
-        </tr>
-	 <tr>
-            <td>presentGold</td>
-            <td>返利元宝数</td>
-            <td>int</td>
-            <td>是</td>
-            <td></td>
-        </tr>
+	
         <tr>
             <td>sign</td>
             <td>所有参数key(不包括sign)按照A-Z字段升序（去除&符号，key与value用=连接）直接拼接key之后,md5运算</td>
